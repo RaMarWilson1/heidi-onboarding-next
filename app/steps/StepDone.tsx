@@ -5,7 +5,6 @@ interface Props { config: ClinicConfig; onReset: () => void; saveState?: string;
 
 export default function StepDone({ config, onReset, saveState }: Props) {
   const accepting = config.doctors.filter(d => d.newPatients).length;
-  const openDays = config.hours.filter(h => !h.closed).length;
 
   return (
     <div className="flex-1 flex flex-col items-center justify-start px-8 py-16 max-w-2xl mx-auto w-full">
@@ -26,9 +25,9 @@ export default function StepDone({ config, onReset, saveState }: Props) {
       {/* Stats */}
       <div className="flex gap-12 mb-12">
         {[
-          { val: "~14 min", label: "Setup time" },
+          { val: "~15 min", label: "Setup time" },
           { val: String(config.doctors.length), label: "Doctors configured" },
-          { val: String(openDays * 3 + 6), label: "Routing rules active" },
+          { val: String(config.doctors.length * 3 + 6), label: "Routing rules active" },
         ].map(({ val, label }) => (
           <div key={label} className="text-center">
             <div className="font-mono text-3xl font-bold mb-1" style={{ color: "var(--heidi)" }}>{val}</div>
@@ -94,9 +93,9 @@ export default function StepDone({ config, onReset, saveState }: Props) {
       <div className="flex gap-3">
         <button
           onClick={onReset}
-          className="px-5 py-2.5 rounded-lg text-sm text-gray-500 bg-white border border-gray-200 hover:bg-gray-50 transition-colors"
+          className="px-5 py-2.5 rounded-lg text-sm text-gray-300 hover:text-gray-500 transition-colors"
         >
-          ← Start over (demo)
+          Start over
         </button>
         <button
           className="px-5 py-2.5 rounded-lg text-sm font-medium text-white transition-all hover:-translate-y-px"

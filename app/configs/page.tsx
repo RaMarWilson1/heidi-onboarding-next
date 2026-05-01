@@ -30,21 +30,21 @@ export default async function ConfigsPage() {
         <div className="flex items-center gap-2">
           <div className="w-7 h-7 rounded-lg flex items-center justify-center text-white text-sm font-bold" style={{ background: "#00B87A" }}>H</div>
           <span className="font-semibold text-gray-900">Heidi Calls</span>
-          <span className="text-xs text-gray-400 border border-gray-200 px-2 py-0.5 rounded-full ml-1" style={{ fontFamily: "monospace" }}>Admin — All Configs</span>
+          <span className="text-xs text-gray-400 border border-gray-200 px-2 py-0.5 rounded-full ml-1" style={{ fontFamily: "monospace" }}>Clinic Registry</span>
         </div>
         <Link href="/" className="text-sm text-gray-400 hover:text-gray-700 transition-colors">
-          ← New onboarding
+          + Onboard new clinic
         </Link>
       </div>
 
       <div className="max-w-5xl mx-auto px-8 py-12">
         <h1 className="text-3xl font-light text-gray-900 mb-2" style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
-          Configured clinics
+          Clinic registry
         </h1>
         <p className="text-sm text-gray-400 mb-8">
           {dbError
             ? "Could not connect to database — check POSTGRES_URL is set in your environment."
-            : `${rows.length} clinic${rows.length !== 1 ? "s" : ""} onboarded`}
+            : `${rows.length} clinic${rows.length !== 1 ? "s" : ""} configured · configs saved to Vercel Postgres`}
         </p>
 
         {dbError && (
@@ -130,11 +130,6 @@ export default async function ConfigsPage() {
             })}
           </div>
         )}
-
-        {/* Setup reminder */}
-        <div className="mt-12 bg-blue-50 border border-blue-200 rounded-xl px-5 py-4 text-sm text-blue-700">
-          <strong>First deploy?</strong> Hit <a href="/api/setup" className="underline font-mono">/api/setup</a> once to create the database table, then complete an onboarding to populate it.
-        </div>
       </div>
     </div>
   );

@@ -71,7 +71,7 @@ export default function Step6Review({ config, onBack, onLaunch, saveState }: Pro
           ["Open days", `${openDays} per week`],
           ["After hours", config.afterHoursNumber ? config.afterHoursNumber : "Voicemail + 000"],
           ["Public holidays", config.publicHolidays === "closed" ? "Closed (auto)" : "Manual"],
-          ["", ""],
+          ["Escalation", config.afterHoursNumber ? "On-call number set" : "000 only"],
         ]} />
         <SummaryCard title={`Clinicians (${config.doctors.length})`} rows={[
           ["Open books", `${accepting} of ${config.doctors.length}`],
