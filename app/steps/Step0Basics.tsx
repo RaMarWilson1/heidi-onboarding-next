@@ -20,7 +20,7 @@ export default function Step0Basics({ config, setConfig, onNext }: Props) {
           <Input value={config.clinicName} onChange={e => set("clinicName", e.target.value)} placeholder="e.g. Northside Family Clinic" />
         </Field>
         <Field label="Main phone number">
-          <Input value={config.phone} onChange={e => set("phone", e.target.value)} placeholder="(03) 9412 5500" type="tel" />
+          <Input value={config.phone} onChange={e => set("phone", e.target.value)} placeholder="(123) 4567 8910" type="tel" />
         </Field>
       </div>
 

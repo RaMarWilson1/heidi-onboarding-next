@@ -83,7 +83,7 @@ export const PRACTICE_TYPES = [
   { value: 'mixed', label: 'Mixed billing' },
   { value: 'specialist', label: 'Specialist referrals' },
   { value: 'mental', label: 'Mental health' },
-  { value: 'paeds', label: 'Paediatrics' },
+  { value: 'peds', label: 'Pediatrics' },
   { value: 'womens', label: "Women's health" },
 ];
 
